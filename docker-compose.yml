@@ -26,6 +26,7 @@ services:
       MB_DB_USER: "mbuser"
       MB_DB_PASS: "password"
       MB_DB_HOST: "metabase-db"
+      MB_LOAD_SAMPLE_CONTENT: false
       JAVA_TIMEZONE: "America/Maceio"
     networks:
       - dokploy-network
