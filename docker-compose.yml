@@ -17,8 +17,12 @@ services:
       dockerfile: Dockerfile
       args:
         MB_EDITION: oss       
-        VERSION: 1.0.0
+        VERSION: 1.0
     restart: always
+    ports:
+      - 3010:3000
+    expose:
+      - 3000    
     environment:
       MB_DB_TYPE: "postgres"
       MB_DB_DBNAME: "metabase"
@@ -33,9 +37,6 @@ services:
     depends_on:
       - metabase-db
 
-volumes:
-  rabbitmq_data:
-  redis_data:
 
 networks:
   dokploy-network:
